@@ -1,8 +1,8 @@
 # Google Trends Playwright Scraper
 
-A practical Google Trends scraper for SEO research and topic monitoring.
+A **free**, Playwright-powered Google Trends scraper for SEO research and topic monitoring.
 
-It is designed for people who want richer Google Trends data than a simple “rising / not rising” signal, while avoiding paid Trends scrapers for low-volume, slow ideation workflows.
+It is designed for people who want richer Google Trends data than a simple “rising / not rising” signal, while avoiding paid Trends scrapers for low-volume, slow ideation workflows. It leverages Playwright to control a real Chrome/Edge browser profile and collect public Google Trends signals slowly and safely.
 
 ## What it captures
 
