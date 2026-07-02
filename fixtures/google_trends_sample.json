@@ -1,0 +1,62 @@
+{
+  "params": {
+    "queries": [
+      "stage de maths"
+    ],
+    "geo": "FR",
+    "hl": "fr-FR",
+    "timeframe": "today 12-m",
+    "region_resolution": "REGION"
+  },
+  "timelineData": [
+    {
+      "time": "1735689600",
+      "formattedTime": "Jan 2025",
+      "value": [34]
+    },
+    {
+      "time": "1738368000",
+      "formattedTime": "Feb 2025",
+      "value": [48]
+    },
+    {
+      "time": "1740787200",
+      "formattedTime": "Mar 2025",
+      "value": [61]
+    },
+    {
+      "time": "1743465600",
+      "formattedTime": "Apr 2025",
+      "value": [55]
+    },
+    {
+      "time": "1746057600",
+      "formattedTime": "May 2025",
+      "value": [72]
+    }
+  ],
+  "geoMapData": [
+    {
+      "geoName": "Île-de-France",
+      "geoCode": "FR-IDF",
+      "value": [100]
+    },
+    {
+      "geoName": "Auvergne-Rhône-Alpes",
+      "geoCode": "FR-ARA",
+      "value": [64]
+    }
+  ],
+  "relatedQueries": [
+    {
+      "query": "stage maths vacances",
+      "value": 80,
+      "type": "rising"
+    },
+    {
+      "query": "cours intensif maths",
+      "value": 55,
+      "type": "top"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+node_modules/
+.google-trends-cache/
+playwright-report/
+test-results/
+__pycache__/
+.pytest_cache/
+*.log
+.env
+*.env
+secrets/
+raw/
+state.json

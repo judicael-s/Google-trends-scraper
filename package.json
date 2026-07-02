@@ -1,0 +1,25 @@
+{
+  "name": "google-trends-playwright-scraper",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Slow, cached Google Trends scraper using Playwright with a persistent Windows Chrome/Edge profile for WSL/Hermes automation.",
+  "type": "commonjs",
+  "scripts": {
+    "test:fixture": "node trends_runner.js --fixture fixtures/google_trends_sample.json",
+    "lint:js": "node --check trends_runner.js",
+    "test": "python -m pytest tests -q"
+  },
+  "keywords": [
+    "google-trends",
+    "playwright",
+    "seo",
+    "trends",
+    "scraper",
+    "cron"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.57.0"
+  },
+  "devDependencies": {}
+}

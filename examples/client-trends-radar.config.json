@@ -1,0 +1,29 @@
+{
+  "client_id": "example-client",
+  "site_url": "https://example.com",
+  "geo": "FR",
+  "hl": "fr-FR",
+  "timeframe": "today 12-m",
+  "region_resolution": "REGION",
+  "min_hours_between_same_query": 24,
+  "keep_open_ms": 3500,
+  "timeout_seconds": 180,
+  "queries": [
+    {
+      "query": "cahier de vacances maths",
+      "intent": "broad seasonal anchor"
+    },
+    {
+      "query": "réviser les maths pendant les vacances",
+      "intent": "parent/student summer revision"
+    },
+    {
+      "query": "préparer sa rentrée en seconde",
+      "intent": "rentrée seconde readiness"
+    },
+    {
+      "query": "test de positionnement maths seconde",
+      "intent": "diagnostic demand"
+    }
+  ]
+}
