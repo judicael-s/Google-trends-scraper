@@ -4,6 +4,19 @@ A **free**, Playwright-powered Google Trends scraper for SEO research and topic 
 
 It is designed for people who want richer Google Trends data than a simple “rising / not rising” signal, while avoiding paid Trends scrapers for low-volume, slow ideation workflows. It leverages Playwright to control a real Chrome/Edge browser profile and collect public Google Trends signals slowly and safely.
 
+## Practical usage
+
+Use it to:
+
+- test and compare SEO/content ideas before investing in production
+- estimate market interest directionally with Google Trends index data
+- discover rising trends and related queries
+- find promising keywords worldwide or regionally
+- compare which countries or regions search for which keywords
+- inspect short-term and long-term demand windows: daily, weekly/hebdo, monthly, yearly, or multi-year
+- time seasonal campaigns and content refreshes
+- monitor a slow keyword radar with cron jobs
+
 ## What it captures
 
 For each query, market, and timeframe, the scraper normalizes:
