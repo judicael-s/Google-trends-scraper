@@ -1,0 +1,47 @@
+{
+  "topics": [
+    {
+      "name": "core_offers",
+      "purpose": "Main products, services, categories, or solutions",
+      "queries": [
+        {"query": "primary offer", "intent": "broad human-style offer query"},
+        {"query": "offer category", "intent": "category demand anchor"}
+      ]
+    },
+    {
+      "name": "audience_needs",
+      "purpose": "Audience, segment, role, life stage, or level-specific needs",
+      "queries": [
+        {"query": "audience problem", "intent": "segment pain phrasing"}
+      ]
+    },
+    {
+      "name": "problems_and_outcomes",
+      "purpose": "Pain, desired outcome, task, or transformation",
+      "queries": [
+        {"query": "solve main problem", "intent": "action/outcome query"}
+      ]
+    },
+    {
+      "name": "commercial_and_comparison",
+      "purpose": "Price, alternatives, comparison, reviews, or purchase intent",
+      "queries": [
+        {"query": "best category", "intent": "commercial investigation"}
+      ]
+    },
+    {
+      "name": "seasonal_and_events",
+      "purpose": "Season, campaign, deadline, event, launch, or recurring calendar window",
+      "queries": [
+        {"query": "category season", "intent": "seasonality check"}
+      ]
+    },
+    {
+      "name": "adjacent_opportunities",
+      "purpose": "Product-adjacent problems, use cases, technologies, locations, or sectors",
+      "queries": [
+        {"query": "adjacent use case", "intent": "adjacent opportunity discovery"}
+      ]
+    }
+  ]
+}

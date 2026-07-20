@@ -191,7 +191,39 @@ python rotating_trends_cron.py \
   --output-dir ./.google-trends-cache/raw
 ```
 
-The wrapper chooses one query whose cooldown expired, stores raw JSON, and prints a concise summary. If all queries were checked recently, it stays silent.
+The wrapper chooses one query whose cooldown expired, rotates across configured topic buckets, stores raw JSON, and logs **every** check—including no-data and no-alert results. If all queries were checked recently, it stays silent.
+
+### Build a reusable query radar
+
+Use short, human-typed phrases rather than article titles. Prefer 2–4 words, while allowing a justified one-word broad anchor or 5–6-word market phrase. Create topic buckets appropriate to the website instead of copying a niche-specific list. The generic starter in `examples/topic-buckets.json` covers offers, audience needs, problems/outcomes, commercial comparisons, seasonal events, and adjacent opportunities.
+
+```bash
+python build_trends_radar_config.py \
+  --client-id example-client \
+  --site-url https://example.com \
+  --geo US --hl en-US \
+  --topic-json examples/topic-buckets.json \
+  --state-json .google-trends-cache/example-state.json \
+  --search-log-jsonl .google-trends-cache/example-search-log.jsonl \
+  --output example-client.config.json
+```
+
+The builder can combine public-audit JSON, GSC rows, competitors, manual seeds, and explicit topic buckets. `--state-json` and `--search-log-jsonl` prevent already-checked exact queries from being regenerated.
+
+### Adaptable durable storage
+
+`search_log.destinations` is environment-driven rather than Obsidian-only:
+
+- `markdown`: local/shared Markdown file;
+- `jsonl`: machine-readable cumulative history;
+- `obsidian_markdown`: optional Obsidian note using an absolute `vault_path` or `OBSIDIAN_VAULT_PATH`;
+- multiple destinations can be enabled together.
+
+Relative non-Obsidian paths resolve next to the client config. Every record contains query/topic provenance, status, raw JSON path, latest/mean/max/delta, active weeks, peak weeks/months, seasonality class, and a plain-language interpretation.
+
+Set `alert_policy.mode` to `always`, `errors_only`, `opportunities_only`, or `silent`. With `opportunities_only`, cron stdout stays empty for ordinary checks while durable logs still grow; this prevents Telegram noise without losing research history.
+
+Seasonality classes are: `no timeline data`, `no visible Trends demand`, `sparse / low Trends signal`, `seasonal peak`, `sparse multi-peak`, `recurring / broad-season`, and `evergreen / all-year`.
 
 ### Recommended cadence
 

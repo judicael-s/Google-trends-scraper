@@ -1,29 +1,73 @@
 {
-  "client_id": "example-client",
+  "client_id": "client-slug",
   "site_url": "https://example.com",
-  "geo": "FR",
-  "hl": "fr-FR",
+  "geo": "",
+  "hl": "en-US",
   "timeframe": "today 12-m",
   "region_resolution": "REGION",
   "min_hours_between_same_query": 24,
   "keep_open_ms": 3500,
   "timeout_seconds": 180,
+  "query_selection": {
+    "method": "audit_preflight_gsc_competitor_manual_and_topic_buckets_to_short_human_queries",
+    "style_rule": "Use short human-typed queries, not article titles. Prefer 2–4 words.",
+    "topic_mix": [
+      "core_offers",
+      "audience_needs",
+      "problems_and_outcomes",
+      "commercial_and_comparison",
+      "seasonal_and_events",
+      "adjacent_opportunities"
+    ],
+    "warning": "Google Trends is ideation only. Validate with GSC, SERP, analytics, DataForSEO or Ads before prioritizing work."
+  },
+  "alert_policy": {
+    "mode": "opportunities_only",
+    "alert_on_errors": true,
+    "min_latest_value": 60,
+    "min_trend_delta": 25,
+    "min_related_queries": 3
+  },
+  "search_log": {
+    "enabled": true,
+    "description": "Every checked query is logged, including no-data and no-alert runs.",
+    "destinations": [
+      {
+        "type": "markdown",
+        "path": "google-trends-searched-keywords-{date}.md"
+      },
+      {
+        "type": "jsonl",
+        "path": "google-trends-search-log.jsonl"
+      },
+      {
+        "type": "obsidian_markdown",
+        "path": "Projects/Client/Google Trends Radar - {date}.md",
+        "enabled": false
+      }
+    ]
+  },
   "queries": [
     {
-      "query": "cahier de vacances maths",
-      "intent": "broad seasonal anchor"
+      "query": "primary offer",
+      "topic": "core_offers",
+      "intent": "broad human-style offer query",
+      "source": "audit_or_onboarding",
+      "selection_score": 0
     },
     {
-      "query": "réviser les maths pendant les vacances",
-      "intent": "parent/student summer revision"
+      "query": "audience problem",
+      "topic": "audience_needs",
+      "intent": "short pain query in customer language",
+      "source": "reviews_gsc_or_research",
+      "selection_score": 0
     },
     {
-      "query": "préparer sa rentrée en seconde",
-      "intent": "rentrée seconde readiness"
-    },
-    {
-      "query": "test de positionnement maths seconde",
-      "intent": "diagnostic demand"
+      "query": "category season",
+      "topic": "seasonal_and_events",
+      "intent": "seasonality check",
+      "source": "calendar_or_strategy",
+      "selection_score": 0
     }
   ]
 }
